@@ -70,7 +70,7 @@ const IletisimFormu = () => {
 
   return (
     <div className="App">
-      <h1>İletişim Formu</h1>
+      <h1 datatestid="form-title">İletişim Formu</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="ad">Ad*</label>
@@ -80,8 +80,9 @@ const IletisimFormu = () => {
             value={form.ad}
             id="ad"
             placeholder="İlhan"
+            data-testid="isim-input"
           />
-          {(errors.ad) && <p data-testid="error">Hata: {errors.ad}</p>}
+          {(errors.ad) && <p data-testid="error-isim">Hata: {errors.ad}</p>}
         </div>
 
         <div>
@@ -92,8 +93,9 @@ const IletisimFormu = () => {
             name="soyad"
             value={form.soyad}
             placeholder="Mansız"
+            data-testid="soyad-input"
           />
-          {(errors.soyad) && <p data-testid="error">Hata: {errors.soyad}</p>}
+          {(errors.soyad) && <p data-testid="error-soyad">Hata: {errors.soyad}</p>}
         </div>
 
         <div>
@@ -104,8 +106,9 @@ const IletisimFormu = () => {
             name="email"
             value={form.email}
             placeholder="yüzyılıngolcüsü@hotmail.com"
+            data-testid="email-input"
           />
-          {(errors.email) && <p data-testid="error">Hata: {errors.email}</p>}
+          {(errors.email) && <p data-testid="error-email">Hata: {errors.email}</p>}
         </div>
 
         <div>
@@ -115,13 +118,14 @@ const IletisimFormu = () => {
             name="mesaj"
             id="mesaj"
             value={form.mesaj}
-          />
-          {(errors.mesaj) && <p data-testid="error">Error: {errors.mesaj}</p>}
+            data-testid="mesaj-input"
+            />
+          {(errors.mesaj) && <p data-testid="error-message">Error: {errors.mesaj}</p>}
         </div>
 
         {displayData && <Goruntule form={form}/>}
 
-        <button>Gönder</button>
+        <button data-testid="submit-button">Gönder</button>
       </form>
     </div>
   );
