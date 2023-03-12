@@ -70,7 +70,7 @@ const IletisimFormu = () => {
 
   return (
     <div className="App">
-      <h1 datatestid="form-title">İletişim Formu</h1>
+      <h1 data-testid="form-title">İletişim Formu</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="ad">Ad*</label>
@@ -118,9 +118,8 @@ const IletisimFormu = () => {
             name="mesaj"
             id="mesaj"
             value={form.mesaj}
-            data-testid="mesaj-input"
-            />
-          {(errors.mesaj) && <p data-testid="error-message">Error: {errors.mesaj}</p>}
+          />
+          {(errors.mesaj) && <p data-testid="error">Error: {errors.mesaj}</p>}
         </div>
 
         {displayData && <Goruntule form={form}/>}
